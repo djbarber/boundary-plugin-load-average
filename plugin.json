@@ -1,0 +1,18 @@
+{
+    "description" : "Checks the load average of the server for 1/5/15",
+    "icon" : "icon.png",
+    "command" : "node process.js $(pollInterval) $(processes)",
+    "postExtract" : "npm install",
+    "ignore" : "node_modules",
+    "metrics" : ["LOAD_AVERAGE_1", "LOAD_AVERAGE_5", "LOAD_AVERAGE_15"],
+    "paramSchema" : [
+	{
+            "title": "Poll Interval",
+            "name": "pollInterval",
+            "description": "The Poll Interval to call the command in milliseconds. Defaults to 1000 milliseconds",
+            "type": "string",
+            "default": 1000,
+            "required": false
+        }
+    ]
+}
